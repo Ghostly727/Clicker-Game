@@ -41,16 +41,6 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-         #finalThing {
-            margin-top: 40px;
-            font-size: 40px;
-            color: darkblue;
-            font-weight: bold;
-            position: absolute;
-            top: 25%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
         #clickedButton {
             width: 300px;
             height: 100px;
@@ -85,6 +75,8 @@
         } 
         @media (max-width: 600px) {
     #clickedButton {
+        width: 80vw;
+        height: 20vw;
         width: 70vw;
         height: 30vw;
         font-size: 7vw;
@@ -101,8 +93,6 @@
 
     #progresscontainer {
         width: 90%;
-    #finalThing {
-        font-size: 3vw;
     }
 }
 
@@ -116,7 +106,6 @@
         <div id="progressbar"></div>
     </div>
     <div id = "funnyThings"></div>
-    <div id = "finalThing"></div>
     <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 25px; color: rgb(0, 0, 0);">
         Made by Eashan Barran / A very ghostly guy
     </div>
@@ -127,13 +116,12 @@
         const displayArea = document.getElementById("displayArea");
         const progressBar = document.getElementById("progressbar");
         const funnyThingsHolder = document.getElementById("funnyThings");
-        const finalThing = document.getElementById("finalThing");
         let count = 0;
         button.addEventListener("click", function() {
             count++;
             displayArea.innerText = "Button clicked " + count + " times.";
             progressBar.style.width = (count / 100 * 100) + "%";
-            
+
 
             if (count == 7) {
                 funnyThingsHolder.innerText = "You just pressed six or seven times!";
@@ -179,8 +167,7 @@
             }
             else if (count == 100) {
                 progressBar.style.backgroundColor = "green"; 
-                displayarea.innerText = "";
-                finalThing.innerText = "You have reached 100 clicks! Congratulations! Refresh the page to start over. You can keep clicking you gamer; I know you can go farther!";
+                displayArea.innerText = "You have reached 100 clicks! Congratulations! Refresh the page to start over. You can keep clicking you gamer; I know you can go farther!";
                 funnyThingsHolder.innerText = "One hundred clicks! Impressive!"
             }
             else if (count > 100) {
@@ -192,10 +179,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
