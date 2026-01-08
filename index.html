@@ -41,6 +41,16 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+         #finalThing {
+            margin-top: 40px;
+            font-size: 40px;
+            color: darkblue;
+            font-weight: bold;
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
         #clickedButton {
             width: 300px;
             height: 100px;
@@ -91,6 +101,8 @@
 
     #progresscontainer {
         width: 90%;
+    #finalThing {
+        font-size: 3vw;
     }
 }
 
@@ -104,6 +116,7 @@
         <div id="progressbar"></div>
     </div>
     <div id = "funnyThings"></div>
+    <div id = "finalThing"></div>
     <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 25px; color: rgb(0, 0, 0);">
         Made by Eashan Barran / A very ghostly guy
     </div>
@@ -114,6 +127,7 @@
         const displayArea = document.getElementById("displayArea");
         const progressBar = document.getElementById("progressbar");
         const funnyThingsHolder = document.getElementById("funnyThings");
+        const finalThing = document.getElementById("finalThing");
         let count = 0;
         button.addEventListener("click", function() {
             count++;
@@ -165,7 +179,7 @@
             }
             else if (count == 100) {
                 progressBar.style.backgroundColor = "green"; 
-                displayArea.innerText = "You have reached 100 clicks! Congratulations! Refresh the page to start over. You can keep clicking you gamer; I know you can go farther!";
+                finalThing.innerText = "You have reached 100 clicks! Congratulations! Refresh the page to start over. You can keep clicking you gamer; I know you can go farther!";
                 funnyThingsHolder.innerText = "One hundred clicks! Impressive!"
             }
             else if (count > 100) {
@@ -177,6 +191,7 @@
 </body>
 
 </html>
+
 
 
 
