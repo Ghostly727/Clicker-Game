@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratice Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            height: 1000px;
+        }
+        body {
+            background-color: rgba(10, 134, 235, 0.747);
+        }
+        #clickedButton {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #displayArea {
+            margin-top: 40px;
+            font-size: 40px;
+            color: darkblue;
+            font-weight: bold;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #funnyThings {
+            margin-top: 40px;
+            font-size: 40px;
+            color: darkblue;
+            font-weight: bold;
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #clickedButton {
+            width: 300px;
+            height: 100px;
+            font-size: 16px;
+         }
+        #clickedButton:hover {
+            background-color: rgb(36, 12, 173);
+            color: white;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        #clickedButton {
+            font-style: bold;
+            font-size: 32px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: black;
+            color: lightblue;
+            transition: all 0.5s ease-out;
+         }
+        #progresscontainer {
+            width: 80%;
+            background-color: lightgray;
+            border-radius: 20px;
+            margin: 20px auto;
+            height: 30px;
+            overflow: hidden;
+        }
+        #progressbar {
+            width: 0%;
+            height: 100%;
+            background-color: rgb(128, 0, 0);
+            transition: width 0.5s ease-out;
+        }   
+    </style>
+</head>
+<body>
+    <h1>Button Click Counter</h1>
+    <button id="clickedButton">Click Me!</button>
+    <div id = "displayArea"></div>
+    <div id="progresscontainer">
+        <div id="progressbar"></div>
+    </div>
+    <div id = "funnyThings"></div>
+    <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 25px; color: rgb(0, 0, 0);">
+        Made by Eashan Barran / A very ghostly guy
+    </div>
+
+
+    <script>
+        const button = document.getElementById("clickedButton");
+        const displayArea = document.getElementById("displayArea");
+        const progressBar = document.getElementById("progressbar");
+        const funnyThingsHolder = document.getElementById("funnyThings");
+        let count = 0;
+        button.addEventListener("click", function() {
+            count++;
+            displayArea.innerText = "Button clicked " + count + " times.";
+            progressBar.style.width = (count / 100 * 100) + "%";
+            
+
+            if (count == 7) {
+                funnyThingsHolder.innerText = "You just pressed six or seven times!";
+            }
+            else if (count == 21) {
+                funnyThingsHolder.innerText = "You know nine plus ten equals twenty one!";
+            }
+            else if (count == 25) {
+                progressBar.style.backgroundColor = "orange";
+                funnyThingsHolder.innerText = "You clicked twenty five times! That's a quarter of a hundred!"
+            }
+            else if (count == 27) {
+                funnyThingsHolder.innerText = "My favorite number is 27!"
+            }
+            else if (count == 32) {
+                funnyThingsHolder.innerText = "Isn't 4 * 8 equal to 32? IDK why I asked that."
+            }
+            else if (count == 42) {
+                funnyThingsHolder.innerText = "The answer to life, the universe and everything!"
+            }
+            else if (count == 50) {
+                progressBar.style.backgroundColor = "yellow";
+                funnyThingsHolder.innerText = "Half a century of clicks!"
+            }  
+            else if (count == 64) {
+                funnyThingsHolder.innerText = "2 to the power of 6 is 64! Wait I think... Oh it's 8 actually."
+            }
+            else if (count == 67) {
+                funnyThingsHolder.innerText = "6-7... I thought we left that in 2025..."
+            }
+            else if (count == 69) {
+                funnyThingsHolder.innerText = "Nice."
+            }
+            else if (count == 73) {
+                funnyThingsHolder.innerText = "73 is the 21st prime number. Fun fact!"
+            }
+            else if (count == 75) {
+                progressBar.style.backgroundColor = "yellowgreen";
+                funnyThingsHolder.innerText = "Three quarters of a hundred clicks!"
+            }
+            else if (count == 88) {
+                funnyThingsHolder.innerText = "88 keys on a piano! Are you a musician?"
+            }
+            else if (count == 100) {
+                progressBar.style.backgroundColor = "green"; 
+                displayArea.innerText = "You have reached 100 clicks! Congratulations! Refresh the page to start over. You can keep clicking you gamer; I know you can go farther!";
+                funnyThingsHolder.innerText = "One hundred clicks! Impressive!"
+            }
+            else if (count > 100) {
+                // Clear funny things for other counts
+                funnyThingsHolder.innerText = "Good job you're really going far! " + count;
+            }
+        });        
+    </script>
+</body>
+</html>
