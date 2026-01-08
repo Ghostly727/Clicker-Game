@@ -72,7 +72,27 @@
             height: 100%;
             background-color: rgb(128, 0, 0);
             transition: width 0.5s ease-out;
-        }   
+        } 
+        @media (max-width: 600px) {
+    #clickedButton {
+        width: 70vw;
+        height: 20vw;
+        font-size: 7vw;
+    }
+
+    #displayArea {
+        font-size: 8vw;
+    }
+
+    #funnyThings {
+        font-size: 7vw;
+    }
+
+    #progresscontainer {
+        width: 90%;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -154,4 +174,5 @@
         });        
     </script>
 </body>
+
 </html>
